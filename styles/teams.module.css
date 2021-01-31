@@ -1,0 +1,47 @@
+.mainTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ff8c00;
+}
+
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 3rem;
+}
+
+.previousTeam {
+  margin-top: 6rem;
+}
+
+.yearContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.yearContainer a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+@media (max-width: 700px) {
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+  .cardList {
+    grid-template-columns: 1fr;
+    gap: 2rem 1rem;
+  }
+
+  .yearContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yearContainer a {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

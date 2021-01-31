@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "First Informal Meetup",
+    "about": "Very first meetup for the first year students at JIIT"
+  },
+  {
+    "id": 2,
+    "title": "Git/Github/Hacktoberfest Workshop ",
+    "about": "Introduction to Open Source and Git/Github"
+  },
+  {
+    "id": 3,
+    "title": "Workshop on Linux",
+    "about": "An introduction to what, why and how to Linux, what's Ricing and why developers love linux"
+  },
+  {
+    "id": 4,
+    "title": "Introduction to APIs",
+    "about": "APIs and how do they work, Introduction to REST API, CRUD Operations, cURL and Python Scripts, and Working with twilio API"
+  },
+  {
+    "id": 5,
+    "title": "Introduction to GSOC",
+    "about": "GSOC, Open Source and talk with former GSOC members",
+    "time": "December 4' 2020  @  6:00PM"
+  }
+]

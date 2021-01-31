@@ -1,0 +1,32 @@
+.card {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.cardHeader {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.cardHeader h2 {
+  font-size: 1.5em;
+}
+
+.role p {
+  color: #6c715d;
+}
+
+.card a {
+  color: #ccc;
+}
+
+.card a:hover {
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .cardHeader {
+    font-size: 1.2rem;
+  }
+}

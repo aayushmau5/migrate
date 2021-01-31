@@ -7,7 +7,7 @@ export default function Nav() {
       <Link href="/">
         <a>
           <img
-            src="jodcMascotWB.svg"
+            src="/jodcMascotWB.svg"
             alt="JODC Mascot"
             className={styles.jodcMascotImg}
           />
@@ -23,17 +23,17 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="events">
+          <Link href="/events">
             <a className={styles.navLink}>events</a>
           </Link>
         </li>
         <li>
-          <Link href="team">
+          <Link href="/team">
             <a className={styles.navLink}>team</a>
           </Link>
         </li>
         <li>
-          <Link href="blog">
+          <Link href="/blog">
             <a className={styles.navLink}>blog</a>
           </Link>
         </li>
@@ -46,17 +46,17 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="events">
+            <Link href="/events">
               <a>events</a>
             </Link>
           </li>
           <li>
-            <Link href="team">
+            <Link href="/team">
               <a>team</a>
             </Link>
           </li>
           <li>
-            <Link href="blog">
+            <Link href="/blog">
               <a>blog</a>
             </Link>
           </li>

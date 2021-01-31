@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Ankit Khandelwal",
+    "role": "Society Head",
+    "gitlink": "https://github.com/Ankk98"
+  },
+  {
+    "id": 2,
+    "name": "Aman Sharma",
+    "role": "Co-ordinator",
+    "gitlink": "https://github.com/amanharitsh123"
+  },
+  {
+    "id": 3,
+    "name": "Anmol Mishra",
+    "role": "Co-ordinator",
+    "gitlink": "https://github.com/anmol27katyani"
+  },
+  {
+    "id": 4,
+    "name": "Mayank Chaudhary",
+    "role": "Co-ordinator",
+    "gitlink": "https://github.com/im-gozmit"
+  },
+  {
+    "id": 5,
+    "name": "Kanchan Joshi",
+    "role": "Volunteer",
+    "gitlink": "https://github.com/koderjoker"
+  },
+  {
+    "id": 6,
+    "name": "Pranshu Srivastava",
+    "role": "Volunteer",
+    "gitlink": "https://github.com/rexagod"
+  },
+  {
+    "id": 7,
+    "name": "Tripti Shukla",
+    "role": "Volunteer",
+    "gitlink": "https://github.com/yellowwoods12"
+  },
+  {
+    "id": 8,
+    "name": "Vaibhav Gupta",
+    "role": "Volunteer",
+    "gitlink": "https://github.com/VARoDeK"
+  }
+]
