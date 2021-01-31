@@ -1,0 +1,14 @@
+.postItemFooter {
+  font-weight: 700;
+}
+
+.postItemDate {
+  color: #aaa;
+  text-align: left;
+  text-transform: uppercase;
+  margin-right: 16px;
+}
+
+.hr {
+  margin: 60px auto;
+}
