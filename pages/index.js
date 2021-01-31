@@ -1,65 +1,54 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/index.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>JODC | JIIT Open-Source Developers Circle</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <section className={styles.sectionHeader}>
+        <div className={styles.logoContainer}>
+          <div className={styles.logoFront}>
+            <img alt="JODC Logo" src="/jodcLogoWB.svg" />
+            <p>JIIT Open-Source Developers Circle</p>
+          </div>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        <div className={styles.social}>
+          <a href="https://github.com/jiitodc">GITHUB</a>
+          <a href="https://t.me/jiitodc">TELEGRAM</a>
+          <a href="https://twitter.com/jiitodc">TWITTER</a>
+          <a href="https://www.facebook.com/groups/jiitodc">FACEBOOK</a>
+        </div>
+      </section>
+      <section className={styles.sectionAbout}>
+        <div className={styles.aboutUs}>
+          <h2>ABOUT US</h2>
+          <div className={styles.divider}></div>
+          <p>
+            According to GitHub’s “State of the Octoverse” report 2019, 99% of
+            software projects in the world use Open Source Technologies in some
+            way or the other. Open source has undoubtably changed the world, and
+            we, the JODC (JIIT Open-Source Developers Circle) aim to help
+            students to become a part of it.
+            <br />
+            <br />
+            The JODC is an initiative by the students of JIIT-128 to promote
+            open source culture. The hub is all about contributing to and
+            collaborating on projects, networking, learning together and guiding
+            students. We conduct talks, workshops, activities, one-to-one
+            sessions and dev-sprints to mentor students.
+            <br />
+            <br />
+            We encourage them to volunteer for open source projects and
+            organisations and participate in open source initiatives such as
+            Google Summer of Code and Outreachy to become better developers and
+            for the betterment of open source.
+          </p>
+        </div>
+      </section>
+    </>
+  );
 }

@@ -1,0 +1,190 @@
+.nav {
+  font-weight: 300;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+.jodcMascotImg {
+  max-height: 90px;
+  width: auto;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.navLink {
+  text-decoration: none;
+  padding: 0.1em 0.25em;
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  transition: all 0.5s;
+  position: relative;
+  border-bottom: 2px solid #fff;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 0;
+  opacity: 0;
+  transition: all 0.6s;
+  background-color: #fff;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  height: 100%;
+  opacity: 1;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #000;
+}
+
+.burgerContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: none;
+  z-index: 10;
+}
+
+.hamburgerIcon {
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburgerIcon::before,
+.hamburgerIcon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburgerIcon::before {
+  transform: translateY(-11px);
+}
+
+.hamburgerIcon::after {
+  transform: translateY(11px);
+}
+
+.burgerContainer.open .hamburgerIcon {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.burgerContainer.open .hamburgerIcon::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.burgerContainer.open .hamburgerIcon::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.navOverlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .navOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    transition: all 0.6s ease-in-out;
+    z-index: 5;
+  }
+
+  .navOverlay.open {
+    transform: translateX(0%);
+  }
+
+  .navOverlayList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .navOverlayList li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    display: block;
+  }
+
+  .navOverlayList li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.4em;
+    padding: 0 10px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 40px;
+    border: none;
+    margin-bottom: 30px;
+  }
+
+  .jodcMascotImg {
+    max-height: 70px;
+  }
+
+  .nav li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  .burgerContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
