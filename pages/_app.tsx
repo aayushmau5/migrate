@@ -1,8 +1,9 @@
 import Head from "next/head";
+
 import Nav from "../components/Nav";
 import "../styles/global.css";
 
-function MyApp({ Component, pageProps }) {
+const MyApp: React.FC<any> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -14,6 +15,6 @@ function MyApp({ Component, pageProps }) {
       </main>
     </>
   );
-}
+};
 
 export default MyApp;

@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 import styles from "../styles/nav.module.css";
 
-export default function Nav() {
+const Nav: React.FC = () => {
   return (
     <div className={styles.nav}>
       <Link href="/">
@@ -64,4 +65,6 @@ export default function Nav() {
       </div>
     </div>
   );
-}
+};
+
+export default Nav;

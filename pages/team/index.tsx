@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../../styles/teams.module.css";
+import { GetStaticProps } from "next";
 
+import styles from "../../styles/teams.module.css";
 import { getAllTeamYear } from "../../utils/getTeamData";
 
-export default function Teams({ teamYears }) {
+const teamsLog: React.FC<any> = ({ teamYears }) => {
   return (
     <>
       <Head>
@@ -24,9 +25,11 @@ export default function Teams({ teamYears }) {
       </section>
     </>
   );
-}
+};
 
-export function getStaticProps() {
+export default teamsLog;
+
+export const getStaticProps: GetStaticProps = async () => {
   const teamYears = getAllTeamYear();
 
   return {
@@ -34,4 +37,4 @@ export function getStaticProps() {
       teamYears,
     },
   };
-}
+};

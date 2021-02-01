@@ -1,10 +1,11 @@
 import Head from "next/head";
-import styles from "../../styles/teams.module.css";
+import { GetStaticProps, GetStaticPaths } from "next";
 
+import styles from "../../styles/teams.module.css";
 import { getAllTeamPaths, getTeamData } from "../../utils/getTeamData";
 import Team from "../../components/TeamComponent/Team";
 
-export default function Teams({ teamData }) {
+const teams: React.FC<any> = ({ teamData }) => {
   return (
     <>
       <Head>
@@ -23,22 +24,23 @@ export default function Teams({ teamData }) {
       </section>
     </>
   );
-}
+};
 
-export async function getStaticPaths() {
+export default teams;
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllTeamPaths();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  // params.year
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const teamData = await getTeamData(params.year);
   return {
     props: {
       teamData: teamData.data,
     },
   };
-}
+};

@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-import Date from "../../components/Date";
+import { GetStaticProps } from "next";
 
 import styles from "../../styles/BlogIndex.module.css";
-
+import Date from "../../components/Date";
 import { getSortedPostsData } from "../../utils/getPosts";
 
-export default function blogIndex({ postsData }) {
+const blogIndex: React.FC<any> = ({ postsData }) => {
   return (
     <>
       <Head>
@@ -29,9 +29,11 @@ export default function blogIndex({ postsData }) {
       ))}
     </>
   );
-}
+};
 
-export function getStaticProps() {
+export default blogIndex;
+
+export const getStaticProps: GetStaticProps = async () => {
   const postsData = getSortedPostsData();
 
   return {
@@ -39,4 +41,4 @@ export function getStaticProps() {
       postsData,
     },
   };
-}
+};

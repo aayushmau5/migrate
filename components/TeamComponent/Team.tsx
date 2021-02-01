@@ -1,6 +1,12 @@
 import styles from "./Team.module.css";
 
-export default function Team({ name, role, gitLink }) {
+interface TeamData {
+  name: string;
+  role: string;
+  gitLink: string;
+}
+
+const Team: React.FC<TeamData> = ({ name, role, gitLink }) => {
   return (
     <div className={styles.card}>
       <header className={styles.cardHeader}>
@@ -14,4 +20,6 @@ export default function Team({ name, role, gitLink }) {
       </div>
     </div>
   );
-}
+};
+
+export default Team;

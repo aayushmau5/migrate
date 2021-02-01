@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Date from "../../components/Date";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 import styles from "../../styles/BlogData.module.css";
-
+import Date from "../../components/Date";
 import { getAllPostIds, getPostData } from "../../utils/getPosts";
 
-export default function blog({ blogData }) {
+const blog: React.FC<any> = ({ blogData }) => {
   return (
     <>
       <Head>
@@ -22,22 +22,23 @@ export default function blog({ blogData }) {
       <div dangerouslySetInnerHTML={{ __html: blogData.contentHtml }} />
     </>
   );
-}
+};
 
-export async function getStaticPaths() {
+export default blog;
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  // params.id
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const blogData = await getPostData(params.id);
   return {
     props: {
       blogData,
     },
   };
-}
+};

@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import styles from "../styles/index.module.css";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <Head>
@@ -51,4 +50,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+};
+
+export default Home;
