@@ -1,17 +1,14 @@
 import Head from "next/head";
 import styles from "../../styles/teams.module.css";
 
-import { getAllTeamPaths } from "../../utils/getStaticData";
+import { getAllTeamPaths, getTeamData } from "../../utils/getTeamData";
 import Team from "../../components/TeamComponent/Team";
-
-import team2019 from "../../Data/teams/PreviousTeam/2019.json";
-import team2018 from "../../Data/teams/PreviousTeam/2018.json";
 
 export default function Teams({ teamData }) {
   return (
     <>
       <Head>
-        <title>Previous Team - JODC</title>
+        <title>Team - JODC</title>
       </Head>
       <div className={styles.mainTitle}>OUR TEAM</div>
       <section className={styles.cardList}>
@@ -28,7 +25,7 @@ export default function Teams({ teamData }) {
   );
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const paths = getAllTeamPaths();
   return {
     paths,
@@ -36,23 +33,12 @@ export function getStaticPaths() {
   };
 }
 
-export function getStaticProps({ params }) {
-  switch (params.year) {
-    case "2019":
-      return {
-        props: {
-          teamData: team2019,
-        },
-      };
-    case "2018":
-      return {
-        props: {
-          teamData: team2018,
-        },
-      };
-    default:
-      return {
-        teamData: team2019,
-      };
-  }
+export async function getStaticProps({ params }) {
+  // params.year
+  const teamData = await getTeamData(params.year);
+  return {
+    props: {
+      teamData: teamData.data,
+    },
+  };
 }

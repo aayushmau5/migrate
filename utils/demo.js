@@ -1,12 +1,12 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import remark from "remark";
-import html from "remark-html";
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
+const remark = require("remark");
+const html = require("remark-html");
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export function getSortedPostsData() {
+function getSortedPostsData() {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");
@@ -28,7 +28,7 @@ export function getSortedPostsData() {
   });
 }
 
-export function getAllPostIds() {
+function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
@@ -39,13 +39,12 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
-  matterResult.data.date = new Date(matterResult.data.date).toISOString();
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
@@ -60,3 +59,6 @@ export async function getPostData(id) {
     ...matterResult.data,
   };
 }
+
+console.log(getSortedPostsData());
+// console.log(getAllPostIds());

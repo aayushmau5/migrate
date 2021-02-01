@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 0.7em;
+}
+
+.header p {
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.header hr {
+  min-width: 100px;
+  width: 30%;
+}

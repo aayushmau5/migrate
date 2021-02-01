@@ -1,35 +1,37 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../../styles/teams.module.css";
 
-import Team from "../../components/TeamComponent/Team";
+import { getAllTeamYear } from "../../utils/getTeamData";
 
-import current from "../../Data/teams/Current.json";
-
-export default function Teams({ teamData }) {
+export default function Teams({ teamYears }) {
   return (
     <>
       <Head>
-        <title>Current Team - JODC</title>
+        <title>Team - JODC</title>
       </Head>
       <div className={styles.mainTitle}>OUR TEAM</div>
       <section className={styles.cardList}>
-        {teamData.map((data) => (
-          <Team
-            key={data.id}
-            name={data.name}
-            role={data.role}
-            gitLink={data.gitlink}
-          />
-        ))}
+        <ul>
+          {teamYears.map((team) => (
+            <li key={team.year}>
+              <Link href={`/team/${team.year}`}>
+                <a>{team.year}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );
 }
 
 export function getStaticProps() {
+  const teamYears = getAllTeamYear();
+
   return {
     props: {
-      teamData: current,
+      teamYears,
     },
   };
 }
