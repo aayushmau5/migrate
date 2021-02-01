@@ -31,7 +31,7 @@ export function getAllTeamYear() {
 export async function getTeamData(id) {
   const file = fs.readFileSync(
     path.join(teamDataDirectory, id + ".json"),
-    "utf-8"
+    "utf-8",
   );
   const jsonData = await JSON.parse(file);
 
